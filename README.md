@@ -4,6 +4,7 @@ Basic config with some necessary plugins.
 
 The basic features I need:
 
+- [x] Custom indent for file type
 - [x] Plugin Manager
 - [x] Syntax highlighting
 - [x] Colorscheme
@@ -13,9 +14,9 @@ The basic features I need:
 - [x] Search
 - [x] Fuzzy Finder
 - [x] Terminal Integration
-- [x] Custom indent for file type
 - [x] Format
 - [x] Keymappings Prompt
+- [x] Comment
 - [x] Language Server Protocol
 - [x] Completion
 - [x] Debug
@@ -37,6 +38,21 @@ The basic features I need:
 └── plugin
     └── packer_compiled.lua
 ```
+
+## Custom indent for file type
+
+I want to customise different indent according to the file type. 
+
+For example:
+The indent style of Lua is 2 spaces. 
+The indent style of C is 8 spaces. (Linux style)
+So I have to customise the indent style separately.
+
+1. `mkdir ~/.config/nvim/ftplugin` and `cd` to it.
+
+2. Customise different indent style file for different file type. e.g. `lua.lua`
+
+3. Done, the neovim will automatically load this file when you are editing *.lua.
 
 ## Plugin Manager
 
@@ -155,21 +171,6 @@ Use `brew` to install them.
 
 2. Write configuration `toggleterm.lua`
 3. Write the key-mappings of this plugin in `keymappings.lua`
-
-## Custom indent for file type
-
-I want to customise different indent according to the file type. 
-
-For example:
-The indent style of Lua is 2 spaces. 
-The indent style of C is 8 spaces. (Linux style)
-So I have to customise the indent style separately.
-
-1. `mkdir ~/.config/nvim/ftplugin` and `cd` to it.
-
-2. Customise different indent style file for different file type. e.g. `lua.lua`
-
-3. Done, the neovim will automatically load this file when you are editing *.lua.
 
 ## Format
 
