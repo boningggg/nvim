@@ -1,16 +1,16 @@
 # OS type
-machine=nil
+MACHINE=nil
 case $OSTYPE in
-	darwin*) machine="darwin" ;;
-	linux*)  machine="linux" ;;
+	darwin*) MACHINE="darwin" ;;
+	linux*)  MACHINE="linux" ;;
 esac
 
 # Dependences
 RIPGREP="ripgrep"
-FD=$([ $OSTYPE == "darwin" ] && echo "fd" || echo "fd-find")
-CLANG="clang"
+FD=$([ $MACHINE == "darwin" ] && echo "fd" || echo "fd-find")
+CLANG=$([ $MACHINE == "darwin" ] && echo "llvm" || echo "clang")
 CLANG_FORMAT="clang-format"
-OPENJDK=$([ $OSTYPE == "darwin" ] && echo "openjdk" || echo "openjdk-18-jdk")
+OPENJDK=$([ $MACHINE == "darwin" ] && echo "openjdk" || echo "openjdk-18-jdk")
 
 DEPENDENCES="$RIPGREP $FD $CLANG $CLANG_FORMAT $OPENJDK"
 
@@ -66,11 +66,9 @@ main ()
 	dependences_config
 	# Because different operating systems use different package managements, 
 	# so we need to use different configurations depending on type of OS.
-	
-	
-	case "${OSTYPE}" in
-		darwin*) macos_config ;;
-		linux*)  linux_config ;;
+	case "$MACHINE" in
+		darwin) macos_config ;;
+		linux)  linux_config ;;
 	esac
 	echo ""
 	echo "Having installed basic dependences for Neovim."
