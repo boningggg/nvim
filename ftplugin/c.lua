@@ -1,0 +1,2 @@
+-- Default, because tab in Neovim is 8 width.
+-- so I don't need to change any things.
