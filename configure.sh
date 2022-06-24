@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # OS type
 MACHINE=nil
 case $OSTYPE in
