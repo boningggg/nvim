@@ -8,13 +8,14 @@ case $OSTYPE in
 esac
 
 # Dependences
+NEOVIM="neovim"
 RIPGREP="ripgrep"
 FD=$([ $MACHINE == "darwin" ] && echo "fd" || echo "fd-find")
 CLANG=$([ $MACHINE == "darwin" ] && echo "llvm" || echo "clang")
 CLANG_FORMAT="clang-format"
 OPENJDK=$([ $MACHINE == "darwin" ] && echo "openjdk" || echo "openjdk-18-jdk")
 
-DEPENDENCES="$RIPGREP $FD $CLANG $CLANG_FORMAT $OPENJDK"
+DEPENDENCES="$NEOVIM $RIPGREP $FD $CLANG $CLANG_FORMAT $OPENJDK"
 
 # Common configurations on different operating systems
 common_config ()
@@ -46,6 +47,7 @@ macos_config ()
 linux_config ()
 {
 	echo "- Detecting you are using linux os, use apt to install dependences for Neovim."
+	sudo add-apt-repository ppa:neovim-ppa/unstable
 	sudo apt update -y
 	sudo apt install -y $DEPENDENCES
 	sudo apt upgrade -y
