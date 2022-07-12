@@ -15,6 +15,7 @@ local cpp_style = {
               BasedOnStyle: LLVM, \
               IndentWidth: 8, \
               UseTab: Always, \
+              ColumnLimit: 100, \
               IncludeBlocks: Regroup, \
               BreakBeforeBraces: Linux, \
               AlignConsecutiveDeclarations: true, \

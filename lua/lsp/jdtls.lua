@@ -17,7 +17,7 @@ return {
     "-jar",
     home .. "/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
     "-configuration",
-    home .. "/.local/share/nvim/lsp_servers/jdtls/config_mac",
+    home .. "/.local/share/nvim/lsp_servers/jdtls/config_linux",
     "-data",
     home .. "/.local/share/nvim/lsp_servers/jdtls/workspace",
   },
